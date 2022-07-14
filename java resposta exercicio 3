@@ -1,0 +1,34 @@
+import Pessoa.Pessoa;
+
+public class Teste {
+    public static void main(String[] args) {
+   
+
+      pessoa1.nome = "lua";
+      pessoa21.idade = 16;
+      pessoa3.peso = "67 kg";
+
+      System.out.println("nome: " + pessoa1.nome);
+      System.out.println("idade: " + pessoa2.idade);
+      System.out.println("peso: " + pessoa3.peso);
+    }
+}
+
+
+
+
+package Pessoa;
+
+public class Pessoa {
+    public String nome;
+    public int idade;
+}
+
+
+
+package Pessoa;
+
+public class Pessoa {
+    public String nome;
+    public int idade;
+}
