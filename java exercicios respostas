@@ -1,0 +1,68 @@
+package lua;
+
+
+
+import java.util.Scanner;
+
+public class javascript.lua {
+    static public class bicho {
+        private String nome;
+        private double fome;
+        private double saude;
+        private int idade;
+        
+        public bicho (String n, double f, double s, int i) {
+            this.nome = n;
+            this.fome = f;
+            this.saude = s;
+            this.idade = i;
+        }
+        public String alterarNome (String n){
+            this.nome = "moon";
+            return this.nome;
+    }
+        public double come (double f){
+            this.fome -= 6.5;
+            if(this.fome < 0){this.fome = 100;}
+            return this.fome;
+        }
+        public double saude (double s){
+           if(this.fome <= 50){
+            this.saude -= 5.5;
+            if(this.saude < 0){this.saude = 100;}
+           }
+           else if(this.fome > 50) {
+               this.saude += 3;
+           }
+           return this.saude;
+           }
+        public int envelhecer (int i){
+            this.idade += 1;
+            return this.idade;
+        }
+        public void humor (){
+            System.out.println("O humor do meu bichinho é: "+(this.fome+this.saude));
+        }
+        }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String nome = "moon";
+        double fome = 00;
+        double saude = +3;
+        int idade = 90;
+        int nu = 0;
+        
+        bicho alam = new bicho ("moon", 56, 90, 10);
+        
+        while(true){
+            sus = sc.nextInt();
+            if(nu == 1){alam.alterarNome(nome);}
+            if(nu == 2){alam.come(fome);}
+            if(nu == 3){alam.saude(saude);}
+            if(nu == 4){alam.envelhecer(idade);}
+            if(nu == 5){alam.humor();}
+        }
+    }
+}
