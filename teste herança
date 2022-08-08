@@ -1,0 +1,150 @@
+package empregado;
+//pai
+    public class Empregado {
+     private int codigo;
+     private String nome, email;
+     protected double salario;
+
+    public Empregado(int cod, String nom, String mail, double sal){
+     this.codigo = cod;
+     this.nome = nom;
+     this.email = mail;
+     this.salario = sal;
+
+}  
+    public String mostrarNom(){
+      return this.nome;
+    }
+     public String mostrarEmai(){
+      return this.email;
+     }
+     
+    public int mostrarCod(){
+      return this.codigo;
+    }
+    public double get_salario() {
+     return this.salario;
+    }
+    
+    public double aumento_salarial(double percentual){
+     return (this.salario * percentual/100);
+     
+    }
+    
+   
+    public static void main(String[] args) {
+      Empregado juvenil = new Empregado(12, "JoÃ£o","joaozinhonato", 1.212);
+      Empregado chefe = new Empregado(14, "Lucas", "luquinhasvitas", 2.354);
+      Empregado estagiario = new Empregado(15, "Silas", "silasassu", 1.420);
+      
+      System.out.println("O cÃ³digo de empregado juvrnil Ã©: " + juvenil.mostrarCod());
+      System.out.println("O nome do empregado juvenil Ã©: " + juvenil.mostrarNom());
+      System.out.println("O E-mail do empregado juvenil Ã©: " + juvenil.mostrarEmai());
+      System.out.println("O salÃ¡rio do empregado juvenil Ã©: " + juvenil.aumento_salarial(1.212));
+     
+   
+    }
+    
+}
+
+chefe 
+package empregado;
+//filho
+    public class chefe extends Empregado{
+     private double beneficio;
+  
+    public chefe(int cod, String nom, String mail, double sal, double ben){
+     this.beneficio = ben;
+}
+    public double aumento_salarial(int percentual){
+      return (this.salario * percentual/100 + beneficio);
+}
+}
+
+estagiario
+package empregado;
+//filho2
+    public class estagiario extends Empregado {
+     private int descontos;
+  
+    public estagiario (int cod, String nom, String mail, double sal, int des) {
+     this.descontos = des;
+    }
+    
+    public double aumento_salarial (int percentual){
+      return(this.salario * percentual/100 - descontos);
+    }
+}
+
+passagem
+
+package férias;
+//eee
+
+public class passagem {
+   private double valor, imposto, seguro;
+
+   public double calcularPreco(double valor, double imposto) {
+     this.valor = valor;
+     this.imposto = imposto;
+     return this.valor + this.imposto;
+  }
+   
+   public double calcularPrecoo(double valor, double imposto, double seguro) {
+     return this.valor + this.imposto + this.seguro;
+     
+   }
+
+}
+
+ferias
+
+package férias;
+//coloca pra executar!!
+
+public class Férias {
+
+
+    public static void main(String[] args) {
+    passagem p1 = new passagem();
+    System.out.println("O valor da passagem sem seguro é: " + p1.calcularPreco(100,10));
+    System.out.println("O valor da passagem com seguro é:  " + p1.calcularPrecoo(100, 10, 20));
+    }
+    
+    
+}
+
+animal
+package animal;
+
+    public class Animal {
+     public String emiteSom() {
+     return "qualquer som";
+   }
+    static public class gato extends Animal{
+    public String emiteSom(){
+      return "MIAWWWW";
+    }
+    }
+    static public class galinha extends Animal{
+    public String emiteSom(){
+    return "PÓ PÓ PÓ";
+  }
+    }
+    static  public class cachorro extends Animal {
+    public String emiteSom(){
+     return "AUAUAUAUAU";
+   }
+  
+    }
+    public static void main(String[] args) {
+    Animal a1 = new Animal();
+    cachorro J = new cachorro();
+    gato jef = new gato();
+    galinha a = new galinha();
+    
+    System.out.println("O som do animal é: " + a1.emiteSom());
+    System.out.println("O som do cachorro é: " + J.emiteSom());
+    System.out.println("O som do gato é: " + jef.emiteSom());
+    System.out.println("O som da galinha é: " + a.emiteSom());
+}
